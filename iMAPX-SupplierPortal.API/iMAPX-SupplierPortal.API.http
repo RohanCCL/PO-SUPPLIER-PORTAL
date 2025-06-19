@@ -1,6 +1,6 @@
-@iMAPX-SupplierPortal.API_HostAddress = http://localhost:5123
+@iMAPX.API_HostAddress = http://localhost:5123
 
-GET {{iMAPX-SupplierPortal.API_HostAddress}}/weatherforecast/
+GET {{iMAPX.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
