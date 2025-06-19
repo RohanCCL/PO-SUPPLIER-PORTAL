@@ -1,15 +1,16 @@
 <div class="blank-layout-container justify-content-center">
-  <div class="position-relative row w-100 h-100">
+  <div class="position-relative row w-100 h-80">
     <div class="col-lg-7 col-xl-8 bg-gredient p-0">
       <div class="p-24 h-100">
         @if(options.theme === 'light'){
         <a [routerLink]="['/starter']">
-          <img src="./assets/images/logos/dark-logo.svg" class="align-middle m-2" alt="logo" />
+            <img src="./assets/images/logos/ProcuX.png" class="align-middle m-1" alt="logo" style="height: 75px;" />
         </a>
         }
         @if(options.theme === 'dark'){
         <a [routerLink]="['/dashboards/dashboard1']">
-          <img src="./assets/images/logos/light-logo.svg" class="align-middle m-2" alt="logo" />
+          <img src="./assets/images/logos/ProcuX.png" class="align-middle m-1" alt="logo" style="height: 75px;" />
+
         </a>
         }
 
@@ -22,7 +23,9 @@
       <div class="p-32 d-flex align-items-start align-items-lg-center justify-content-center h-100">
         <div class="row justify-content-center w-100">
           <div class="col-lg-9 max-width-form">
-            <h4 class="f-w-700 f-s-24 m-0">Welcome to iMAP-X</h4>
+            <img src="./assets/images/logos/Courtaulds.png" class="align-middle m-1" alt="logo" style="height: 50px;" />
+           <h3 class="f-w-700 f-s-24 m-0" style="font-family: 'Roboto',Biome Light;">Welcome to ProcureX</h3>
+
             <span class="f-s-14 d-block mat-body-1 m-t-8">Courtaulds Trading Company (Pvt) Ltd</span>
 
             <form class="m-t-30" [formGroup]="form" (ngSubmit)="submit()">

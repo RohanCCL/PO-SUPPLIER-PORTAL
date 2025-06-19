@@ -10,13 +10,15 @@ import { CoreService } from 'src/app/services/core.service';
     <div class="branding d-none d-lg-flex align-items-center">
       <a [routerLink]="['/']" class="d-flex">
         <img
-          src="./assets/images/logos/light-logo.svg"
+          src="./assets/images/logos/ProcuX.png"
           class="align-middle m-2"
           alt="logo"
+          style="width: 130px; height: auto;"
         />
       </a>
     </div>
   `,
+  
 })
 export class BrandingComponent {
   options = this.settings.getOptions();

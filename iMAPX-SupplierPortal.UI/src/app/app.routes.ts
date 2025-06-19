@@ -19,7 +19,17 @@ export const routes: Routes = [
     component: FullComponent,
     canActivate: [AuthGuard],
     children: [
- 
+      {
+        path: 'starter',
+        loadChildren: () =>
+          import('./pages/pages.routes').then((m) => m.PagesRoutes),
+      },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./pages/users/users.routes').then((m) => m.UsersRoutes),
+      },
+     
       {
         path: 'po',
         loadChildren: () => 
@@ -27,10 +37,11 @@ export const routes: Routes = [
       },
       
       {
-        path: 'aql',
+        path: 'reference',
         loadChildren: () => 
-          import('./pages/aql/aql.routes').then(m => m.AQLRoutes),
+          import('./pages/reference/reference.routes').then(m => m.ReferenceRoutes),
       },
+  
      
     ],
   },
