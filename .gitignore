@@ -1,0 +1,161 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Ignore .NET Core specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignore logs and crash dumps
+*.log
+*.tlog
+*.pid
+*.log*
+*.svclog
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore settings and configurations for development environments
+.vscode/
+.idea/
+.ionide/
+*.swp
+*.sln.ide
+.vs/
+
+# Ignore Rider files
+.idea/
+*.sln.iml
+
+# Ignore NuGet packages folder
+packages/
+*.nupkg
+*.snupkg
+project.nuget.cache
+
+# Ignore user secrets (when stored in file system)
+**/secrets.json
+
+# Ignore publish and deployment folders
+publish/
+out/
+
+# Ignore Resharper files
+_ReSharper*/
+*.DotSettings.user
+
+# ASP.NET Scaffolding
+.scaffolding
+
+# Ignore coverage and test results
+TestResults/
+*.trx
+coverage/
+
+# Ignore database and cache files
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Exclude sensitive configuration files
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+
+# Ignore JetBrains Rider / IntelliJ files
+.idea/
+*.sln.iml
+
+# Ignore tool folders
+.vscode/
+.ionide/
+.tsscache/
+.history/
+.Rhistory
+
+# Other files you may want to ignore
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+**/node_modules/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Ignore files with specific extensions
+*.vsidx
+*.v8.bin
+
+# Ignore specific directories and their contents
+.vs/
+
+# Ignore C# project intermediate files in obj/Release/
+*.AssemblyInfo.cs
+*.AssemblyInfoInputs.cache
+*.GeneratedMSBuildEditorConfig.editorconfig
+*.csproj.AssemblyReference.cache
+
+# Ignore obj/ directory and its contents recursively
+obj/
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+iMAPX-SupplierPortal.UI/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Angular build output
+iMAPX-SupplierPortal.UI/dist/
+iMAPX-SupplierPortal/

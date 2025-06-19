@@ -1,0 +1,40 @@
+<mat-card class="cardWithShadow theme-card">
+    <mat-card-header>
+      <mat-card-title>Tag Reallocation</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="b-t-1">
+      <form [formGroup]="reallocationForm">
+
+        <!-- Radio Toggle to switch between TAG ID and Bundle ID-->
+        <mat-radio-group 
+          formControlName="searchType" class="radio-group" aria-label="Select search type">
+          <mat-radio-button value="tagID">Search by TAG ID</mat-radio-button>
+          <mat-radio-button value="bundleID">Search by Bundle ID</mat-radio-button>
+        </mat-radio-group>
+  
+        <!-- Input Field changes based on radio button selection  -->
+        <mat-form-field appearance="outline" class="w-100 m-t-16">
+          <input  matInput [placeholder]="'Enter ' + inputLabel" formControlName="searchValue">
+        </mat-form-field>
+  
+        <div class="m-t-16">
+          <button  mat-raised-button color="primary">View</button>
+        </div>
+
+        <br><br><mat-divider></mat-divider><br><!-- Divider Here-->
+        <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block">View Data Here</mat-label>
+        <br><br><mat-divider></mat-divider><br><!-- Divider Here-->
+
+        <mat-checkbox formControlName="deallocate" class="m-t-16"> Deallocation</mat-checkbox><br><br>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput placeholder="" type="text">
+          </mat-form-field>
+  
+          
+          <div class="m-t-16">
+            <button mat-raised-button color="primary">Change</button>
+          </div>
+      </form>
+    </mat-card-content>
+  </mat-card>

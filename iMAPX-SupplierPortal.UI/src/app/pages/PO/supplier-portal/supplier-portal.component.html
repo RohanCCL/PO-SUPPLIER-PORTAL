@@ -1,0 +1,78 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">PO List</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="b-t-1">
+    <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
+
+      <!-- Row 1: Autocomplete & Date Picker -->
+      <div class="d-flex gap-3 flex-wrap">
+        <mat-form-field appearance="outline" style="flex: 1">
+          <mat-label>Search Application</mat-label>
+          <mat-icon matPrefix>search</mat-icon>
+          <input
+            type="text"
+            matInput
+            formControlName="application"
+            [matAutocomplete]="auto"
+            placeholder="Type to search..."
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let app of filteredApps | async" [value]="app">
+              {{ app }}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-error *ngIf="applicationError()">{{ applicationError() }}</mat-error>
+        </mat-form-field>
+
+        <!-- Date Picker -->
+        <mat-form-field appearance="outline" style="flex: 1">
+          <mat-label>Select Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <!-- Row 2: Search Button -->
+      <div class="text-end m-t-12">
+        <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Search</span>
+          <mat-spinner *ngIf="isLoading" diameter="20" mode="indeterminate"></mat-spinner>
+        </button>
+      </div>
+
+      <!-- Table -->
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 m-t-16 w-100">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef> Weight </th>
+          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>

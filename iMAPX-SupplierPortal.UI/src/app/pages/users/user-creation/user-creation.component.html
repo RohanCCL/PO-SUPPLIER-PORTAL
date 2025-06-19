@@ -1,0 +1,113 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">User Creation</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >First Name</mat-label
+      >
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Enter first name" type="text" formControlName="firstName" />
+        <mat-error *ngIf="firstNameError">{{ firstNameError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >Last Name</mat-label
+      >
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Enter last name" type="text" formControlName="lastName" />
+        <mat-error *ngIf="lastNameError">{{ lastNameError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >Username</mat-label
+      >
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Enter username" type="text" formControlName="userName" />
+        <mat-error *ngIf="userNameError">{{ userNameError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block m-t-12"
+        >Password</mat-label
+      >
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Enter password" type="text" formControlName="password" />
+        <mat-error *ngIf="passwordError">{{ passwordError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block m-t-12"
+        >Confirm Password</mat-label
+      >
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Enter confirm password" type="text" formControlName="confirmPassword" />
+        <mat-error *ngIf="confirmPasswordError">{{ confirmPasswordError() }}</mat-error>
+      </mat-form-field>
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >EPF number
+      </mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Enter EPF number" type="text" formControlName="epfNumber" />
+        <mat-error *ngIf="epfNumberError">{{ epfNumberError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block">Email</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Enter email" type="email" formControlName="email" />
+        <mat-error *ngIf="emailError">{{ emailError() }}</mat-error>
+      </mat-form-field>
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >Date of Birth
+      </mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput [matDatepicker]="birthpicker" formControlName="birthpicker" />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="birthpicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #birthpicker></mat-datepicker>
+        <mat-error *ngIf="dobError">{{ dobError() }}</mat-error>
+      </mat-form-field>
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >Phone number
+      </mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <input matInput placeholder="Format: 0771234567" type="text" formControlName="phoneNumber" />
+        <mat-error *ngIf="phoneNumberError">{{ phoneNumberError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >App Name</mat-label
+      >
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-select formControlName="appName">
+          <mat-option *ngFor="let app of applications" [value]="app.application_id">{{ app.application_name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="appNameError">{{ appNameError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block">Plant</mat-label>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-select value="CCL" formControlName="plant">
+          <mat-option value="CCL">CCL</mat-option>
+          <mat-option value="CCK">CCK</mat-option>
+          <mat-option value="CCD">CCD</mat-option>
+        </mat-select>
+        <mat-error *ngIf="plantError">{{ plantError() }}</mat-error>
+      </mat-form-field>
+      <!-- input -->
+      <mat-label class="mat-subtitle-2 f-w-600 m-b-8 d-block"
+        >Upload Profile Picture</mat-label
+      >
+      <button type="button" mat-stroked-button (click)="fileInput.click()">
+        Choose photo
+      </button>
+      <input hidden #fileInput type="file" id="file" formControlName="profilePicture" />
+      <br>
+      <div class="m-t-12">
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

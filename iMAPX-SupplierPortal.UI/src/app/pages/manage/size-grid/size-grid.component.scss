@@ -1,0 +1,10 @@
+.row-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.field-container {
+  flex: 1 1 300px; // Allows flexible growth and shrink with a base min width
+  min-width: 280px; // Ensures they don't get too narrow
+}
