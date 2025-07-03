@@ -1,9 +1,76 @@
-<!-- ============================================================== -->
-<!-- Simple four boxes Row -->
-<!-- ============================================================== -->
-<mat-card class="cardWithShadow">
-  <mat-card-content>
-    <mat-card-title>Sample Page</mat-card-title>
-    <mat-card-subtitle class="mat-body-1">This is test page</mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
+<div class="dashboard-layout">
+  <!-- Top Row - Count Cards -->
+  <div class="count-cards-row">
+    <!-- PO Count Card -->
+    <mat-card class="bandwidth-card">
+      <mat-card-header>
+        <div class="header-with-icon">
+          <mat-icon class="title-icon">receipt</mat-icon>
+          <div>
+            <mat-card-title class="title-value">{{ title }}</mat-card-title>
+          </div>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="po-count-value">{{pocount}}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- PI Count Card -->
+    <mat-card class="bandwidth-card-right">
+      <mat-card-header>
+        <div class="header-with-icon">
+          <mat-icon class="title-icon">insert_chart</mat-icon>
+          <div>
+            <mat-card-title class="title-value-right">{{titlePI}}</mat-card-title>
+          </div>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="po-count-value-right">{{picount}}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Customer Count Card -->
+    <mat-card class="bandwidth-card-Customer">
+      <mat-card-header>
+        <div class="header-with-icon">
+          <mat-icon class="title-icon">people</mat-icon>
+          <div>
+            <mat-card-title class="title-value-CustomerCount">{{titleCustomer}}</mat-card-title>
+          </div>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="po-count-value-CustomerCount">{{customersCount}}</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+ 
+</div>
+
+ <!-- Bottom Row - Chart Card -->
+  <div class="chart-card-row">
+    <mat-card class="cardWithShadow theme-card">
+      <mat-card-header>
+        <mat-card-title class="m-b-0">Month wise PO/PI</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="b-t-1">
+        <apx-chart
+          [series]="columnChartOptions.series!"
+          [chart]="columnChartOptions.chart!"
+          [xaxis]="columnChartOptions.xaxis!"
+          [yaxis]="columnChartOptions.yaxis!"
+          [grid]="columnChartOptions.grid!"
+          [stroke]="columnChartOptions.stroke!"
+          [tooltip]="columnChartOptions.tooltip!"
+          [plotOptions]="columnChartOptions.plotOptions!"
+          [dataLabels]="columnChartOptions.dataLabels!"
+          [legend]="columnChartOptions.legend!"
+          [colors]="columnChartOptions.colors!"
+          [markers]="columnChartOptions.markers!">
+        </apx-chart>
+      </mat-card-content>
+    </mat-card>
+  </div>

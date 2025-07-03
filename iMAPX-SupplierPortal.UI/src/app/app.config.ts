@@ -33,6 +33,8 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { provideAnimations } from '@angular/platform-browser/animations';
+
 export function HttpLoaderFactory(http: HttpClient): any {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -52,6 +54,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimationsAsync(),
     provideToastr(),
+    provideAnimations(),
     importProvidersFrom(
       FormsModule,
       ToastrModule.forRoot(),

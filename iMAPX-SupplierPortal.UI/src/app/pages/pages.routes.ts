@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
-import { StarterComponent } from './starter/starter.component';
+import { BandwidthUsageComponent } from './starter/starter.component';
 
 export const PagesRoutes: Routes = [
   {
     path: '',
-    component: StarterComponent,
+    component: BandwidthUsageComponent,
     data: {
-      title: 'Starter Page',
+      title: 'Dashboard ',
       urls: [
-        { title: 'Home', url: '/starter' },
-        { title: 'Starter' },
+        { title: 'Home', url: '/Dashboard' },
+        { title: 'Dashboard' },
       ],
     },
   },

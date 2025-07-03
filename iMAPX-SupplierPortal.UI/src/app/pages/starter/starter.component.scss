@@ -1,0 +1,141 @@
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); // Reduced min width
+  gap: 12px; // Reduced gap
+  padding: 11px; // Reduced padding
+
+  mat-card {
+    padding: 16px; // Reduced padding
+    border-radius: 16px; // Slightly smaller radius
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); // Lighter shadow
+    
+    .header-with-icon {
+      display: flex;
+      align-items: center;
+      gap: 20px; // Reduced gap
+      margin-bottom: 12px; // Reduced margin
+      
+      .title-icon {
+        font-size: 32px;  // Reduced from 36px
+        width: 30px;      // Reduced from 40px
+        height: 28px;     // Reduced from 40px
+        min-width: 30px;  
+        min-height: 30px; 
+      }
+    }
+  }
+
+  .bandwidth-card {
+    background-color: #0f9c5b;
+    
+    .title-value, .po-count-value {
+      color: aliceblue;
+    }
+    
+    .title-value {
+      font-size: 22px; // Reduced from 23px
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bold;
+    }
+    
+    .po-count-value {
+      font-size: 38px; // Reduced from 40px
+      text-align: center;
+      margin-top: 12px; // Reduced from 15px
+    }
+  }
+
+  .bandwidth-card-right {
+    background-color: rgba(243, 17, 74, 0.589);
+    
+    .title-value-right, .po-count-value-right {
+      color: aliceblue;
+    }
+    
+    .title-value-right {
+      font-size: 22px; // Reduced from 23px
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bold;
+    }
+    
+    .po-count-value-right {
+      font-size: 38px; // Reduced from 40px
+      text-align: right;
+      margin-top: 12px; // Reduced from 15px
+    }
+  }
+
+  .bandwidth-card-Customer {
+    background: linear-gradient(
+      135deg, 
+      rgba(114, 101, 197, 0.5) 0%,
+      rgba(114, 101, 197, 0.2) 100%
+    );
+    
+    .title-value-CustomerCount, .po-count-value-CustomerCount {
+      color: #312e2e;
+    }
+    
+    .title-value-CustomerCount {
+      font-size: 22px; // Reduced from 25px
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bold;
+    }
+    
+    .po-count-value-CustomerCount {
+      font-size: 38px; // Reduced from 42px
+      text-align: center;
+      margin-top: 12px; // Reduced from 15px
+    }
+  }
+
+  .dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.count-cards-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+  mat-card {
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+.chart-card-row {
+  width: 100%;
+}
+
+/* Adjust card styles as needed */
+.bandwidth-card, 
+.bandwidth-card-right, 
+.bandwidth-card-Customer {
+  // Your existing card styles
+}
+
+.cardWithShadow {
+  width: 100%;
+}
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 668px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+    
+    .po-count-value-right {
+      text-align: center !important;
+    }
+    
+    mat-card .header-with-icon .title-icon {
+      font-size: 30px; // Adjusted
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+

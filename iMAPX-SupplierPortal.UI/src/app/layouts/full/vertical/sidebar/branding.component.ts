@@ -8,13 +8,13 @@ import { CoreService } from 'src/app/services/core.service';
   imports: [RouterModule],
   template: `
     <div class="branding d-none d-lg-flex align-items-center">
-      <a [routerLink]="['/']" class="d-flex">
+      <a [routerLink]="['/']" class="d-flex">    
         <img
           src="./assets/images/logos/ProcuX.png"
           class="align-middle m-2"
           alt="logo"
           style="width: 130px; height: auto;"
-        />
+         />
       </a>
     </div>
   `,
@@ -25,3 +25,19 @@ export class BrandingComponent {
 
   constructor(private settings: CoreService) {}
 }
+
+
+ // <img
+        //   src="./assets/images/logos/ProcuX.png"
+        //   class="align-middle m-2"
+        //   alt="logo"
+        //   style="width: 130px; height: auto;"
+        // />
+
+
+        //  <img
+        //   src="./assets/images/logos/Courtaulds.png"
+        //   class="align-middle m-2"
+        //   alt="logo"
+        //   style="width: 180px; height: auto;"
+        // />

@@ -45,7 +45,8 @@
       </div>
 
       <!-- Table -->
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 m-t-16 w-100">
+       <!-- [dataSource]="dataSource" -->
+      <table mat-table  class="mat-elevation-z8 m-t-16 w-100">
 
         <!-- Position Column -->
         <ng-container matColumnDef="position">
@@ -71,8 +72,8 @@
           <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+        <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
       </table>
     </form>
   </mat-card-content>
